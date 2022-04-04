@@ -1,0 +1,14 @@
+digraph G2_32 {
+    # |w|_b кратно трем
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; s2;
+    node [shape = "circle"];
+    "" -> s2;
+    s2 -> q21 [label = "b"];
+    s2 -> s2 [label = "a"];
+    q21 -> q22 [label = "b"];
+    q21 -> q21 [label = "a"];
+    q22 -> s2 [label = "b"];
+    q22 -> q22 [label = "a"];
+}

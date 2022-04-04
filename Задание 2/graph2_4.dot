@@ -1,0 +1,25 @@
+digraph G2_4 {
+    # (|w|_a нечетно) || (|w|_b некратно трем)
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "circle"];s1s2;
+    node [shape = "doublecircle"];
+    "" -> s1s2;
+    s1s2 -> q1s2 [label = "a"];
+    s1s2 -> s1q21 [label = "b"];
+
+    s1q21 -> q1q21 [label = "a"];
+    s1q21 -> s1q22 [label = "b"];
+
+    s1q22-> q1q22 [label = "a"];
+    s1q22 -> s1s2 [label = "b"];
+
+    q1s2 -> s1s2 [label = "a"];
+    q1s2 -> q1q21 [label = "b"];
+
+    q1q21 -> s1q21 [label = "a"];
+    q1q21 -> q1q22 [label = "b"];
+
+    q1q22 -> s1q22 [label = "a"];
+    q1q22 -> q1s2 [label = "b"];
+}

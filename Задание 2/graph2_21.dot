@@ -1,0 +1,11 @@
+digraph G2_21 {
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; t1;
+    node [shape = "circle"];
+    "" -> s1;
+    s1 -> q11 [label = "a, b"];
+    q11 -> q12 [label = "a, b"];
+    q12 -> t1 [label = "a, b"];
+    t1 -> t1 [label = "a, b"];
+}
