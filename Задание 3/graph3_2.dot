@@ -1,0 +1,20 @@
+digraph G3_2{
+    # ДКА a(a(ab)*b)*(ab)*
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; q2, q5, q3q5;
+    node [shape = "circle"];
+    "" -> q1;
+    q1 -> q2 [label = "a"];
+    q2 -> q3 [label = "a"];
+    q3 -> q4 [label = "a"];
+    q3 -> q5 [label = "b"];
+    q4 -> q3q5 [label = "b"];
+    q5 -> q3q6 [label = "a"];
+    q3q5 -> q3q4q6 [label = "a"];
+    q3q5 -> q5 [label = "b"];
+    q3q6 -> q4 [label = "a"];
+    q3q6 -> q5 [label = "b"];
+    q3q4q6 -> q4 [label = "a"];
+    q3q4q6 -> q3q5 [label = "b"];
+} 

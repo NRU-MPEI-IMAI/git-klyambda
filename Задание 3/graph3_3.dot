@@ -1,0 +1,18 @@
+digraph G3_3 {
+    # ДКА (a+(a+b)(a+b)b)*
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; q1, q1q2, q1q2q3, q1q3;
+    node [shape = "circle"];
+    "" -> q1;
+    q1 -> q1q2 [label = "a"];
+    q1 -> q2 [label = "b"];
+    q1q2 -> q1q2q3 [label = "a"];
+    q1q2 -> q2q3 [label = "b"];
+    q2 -> q3 [label = "a, b"];
+    q1q2q3 -> q1q2q3 [label = "a, b"];
+    q2q3 -> q3 [label = "a"];
+    q2q3 -> q1q3 [label = "b"];
+    q3 -> q1 [label = "b"];
+    q1q3 -> q1q2 [label = "a, b"];
+}

@@ -1,0 +1,13 @@
+digraph G3_1{
+    # ДКА (ab+aba)*a
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; q2q4q5; q1q2q4q5;
+    node [shape = "circle"];
+    "" -> q1;
+    q1 -> q2q4q5 [label = "a"];
+    q2q4q5 -> q1q3 [label = "b"];
+    q1q3 -> q1q2q4q5 [label = "a"];
+    q1q2q4q5 -> q1q3 [label = "b"];
+    q1q2q4q5 -> q2q4q5 [label = "a"];
+} 

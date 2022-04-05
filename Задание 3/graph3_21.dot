@@ -1,0 +1,21 @@
+digraph G3_21 {
+    # НКА a(a(ab)*b)*(ab)* с eps-переходами
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; q2, q6, q8;
+    node [shape = "circle"];
+    "" -> q1;
+    q1 -> q2 [label = "a"];
+    q2 -> q3 [label = "a"];
+    q2 -> q6 [label = "eps"];
+    q3 -> q4 [label = "a"];
+    q3 -> q5 [label = "eps"];
+    q4 -> q5 [label = "b"];
+    q5 -> q3 [label = "eps"];
+    q5 -> q6 [label = "b"];
+    q6 -> q2 [label = "eps"];
+    q6 -> q7 [label = "a"];
+    q6 -> q8 [label = "eps"];
+    q7 -> q8 [label = "b"];
+    q8 -> q6 [label = "eps"];
+}

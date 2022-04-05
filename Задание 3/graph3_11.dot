@@ -1,0 +1,19 @@
+digraph G3_11 {
+    # НКА (ab+aba)*a с eps-переходами
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; q8;
+    node [shape = "circle"];
+    "" -> q1;
+    q1 -> q2 [label = "eps"];
+    q1 -> q5 [label = "eps"];
+    q1 -> q7 [label = "eps"];
+    q2 -> q3 [label = "a"];
+    q3 -> q4 [label = "b"];
+    q4 -> q7 [label = "a"];
+    q5 -> q6 [label = "a"];
+    q6 -> q7 [label = "b"];
+    q7 -> q1 [label = "eps"];
+    q7 -> q8 [label = "a"];
+
+}

@@ -1,0 +1,21 @@
+digraph G3_41 {
+    # НКА (b+c)((ab)*c + (ba)*)*
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; q2, q6, q7, q9, q10;
+    node [shape = "circle"];
+    "" -> q1;
+    q1 -> q2 [label = "b, c"];
+    q2 -> q3 [label = "eps"];
+    q2 -> q10 [label = "eps"];
+    q3 -> q4 [label = "eps"];
+    q3 -> q7 [label = "eps"];
+    q4 -> q5 [label = "a"];
+    q5 -> q4 [label = "b"];
+    q4 -> q6 [label = "c"];
+    q6 -> q9 [label = "eps"];
+    q7 -> q8 [label = "b"];
+    q8 -> q7 [label = "a"];
+    q7 -> q9 [label = "eps"];
+    q9 -> q10 [label = "eps"];
+}
