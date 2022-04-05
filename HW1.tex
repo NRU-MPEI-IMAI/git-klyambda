@@ -230,21 +230,120 @@ $\delta(t_1p_5, a) = q_2p_4 \hfill \delta(t_1p_5, b) = q_2p_1\\$
 % 3
 \section{Построить минимальный ДКА по регулярному выражению}
 Ответом на данное задание является минимальный ДКА, который допускает тот же язык, что описывается регулярным выражением.
-
+% 3.1
 \subsection{}
-$$(ab + aba)^*$$
+$$(ab + aba)^*a$$
 
+Построим НКА с $\lambda$-переходами.
+\begin{center}
+    \includegraphics[scale=0.6]{graph3_11.png}
+\end{center}
+\newpage
+
+Убираем $\lambda$-переходы.
+\begin{center}
+    \includegraphics[scale=1.0]{graph3_12.png}
+\end{center}
+Строим ДКА.
+
+
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+\hline
+     & a    & b  \\ \hline
+1    & 245  & -  \\ \hline
+245  & -    & 13 \\ \hline
+13   & 1245 & -  \\ \hline
+1245 & 245  & 13 \\ \hline
+\end{tabular}
+\includegraphics[scale=0.7]{graph3_1.png}
+\end{center}
+
+\newpage
+% 3.2
 \subsection{}
 $$a(a(ab)^*b)^*(ab)^*$$
 
+Построим НКА с $\lambda$-переходами.
+\begin{center}
+    \includegraphics[scale=0.5]{graph3_21.png}
+\end{center}
+
+Убираем $\lambda$-переходы.
+\begin{center}
+    \includegraphics[scale=0.6]{graph3_22.png}
+\end{center}
+
+Строим ДКА.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+    & a   & b  \\ \hline
+1   & 2   & -  \\ \hline
+2   & 3   & -  \\ \hline
+3   & 4   & 5  \\ \hline
+4   & -   & 35 \\ \hline
+5   & 36  & -  \\ \hline
+35  & 346 & 5  \\ \hline
+36  & 4   & 5  \\ \hline
+346 & 4   & 35 \\ \hline
+\end{tabular}
+\includegraphics[scale=0.47]{graph3_2.png}
+\end{center}
+
+% 3.3
 \subsection{}
 $$(a + (a + b)(a + b)b)^*$$
 
+Построим НКА.
+\begin{center}
+    \includegraphics[scale=1.0]{graph3_31.png}
+\end{center}
+
+Строим ДКА.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+    & a   & b   \\ \hline
+1   & 12  & 2   \\ \hline
+12  & 123 & 23  \\ \hline
+2   & 3   & 3   \\ \hline
+123 & 123 & 123 \\ \hline
+23  & 3   & 13  \\ \hline
+3   & -   & 1   \\ \hline
+13  & 12  & 12  \\ \hline
+\end{tabular}
+\includegraphics[scale=0.72]{graph3_3.png}
+\end{center}
+
+% 3.4
 \subsection{}
 $$(b + c)((ab)^*c + (ba)^*)^*$$
 
+
+Построим НКА с $\lambda$-переходами.
+\begin{center}
+    \includegraphics[scale=0.5]{graph3_41.png}
+\end{center}
+
+Убираем $\lambda$-переходы и строим ДКА.
+\begin{center}
+    \includegraphics[scale=0.6]{graph3_4.png}
+\end{center}
+
+% 3.5
 \subsection{}
 $$(a + b)^+(aa + bb + abab + baba)(a + b)^+$$
+
+Построим НКА.
+\begin{center}
+    \includegraphics[scale=0.5]{graph3_51.png}
+\end{center}
+
+Строим ДКА.
+\begin{center}
+    \includegraphics[scale=0.5]{graph3_5.png}
+\end{center}
 \newpage
 
 % 4

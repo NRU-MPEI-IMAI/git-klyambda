@@ -1,0 +1,8 @@
+digraph G3_5 {
+    # ДКА (a + b)^+(aa ++ bb + abab + baba)(a + b)^+ 
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"];
+    node [shape = "circle"];
+    "" -> q1;
+}

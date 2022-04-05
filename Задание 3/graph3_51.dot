@@ -1,0 +1,23 @@
+digraph G3_5 {
+    # НКА (a + b)^+(aa ++ bb + abab + baba)(a + b)^+ 
+    rankdir = "LR";
+    node [shape = "none"]; "";
+    node [shape = "doublecircle"]; q10;
+    node [shape = "circle"];
+    "" -> q1;
+    q1 -> q2 [label = "a, b"];
+    q2 -> q2 [label = "a, b"];
+    q2 -> q3 [label = "a"];
+    q2 -> q4 [label = "b"];
+    q3 -> q5 [label = "b"];
+    q3 -> q9 [label = "a"];
+    q4 -> q9 [label = "b"];
+    q4 -> q6 [label = "a"];
+    q5 -> q7 [label = "a"];
+    q6 -> q8 [label = "b"];
+    q7 -> q9 [label = "b"];
+    q8 -> q9 [label = "a"];
+    q9 -> q10 [label = "a, b"];
+    q10 -> q10 [label = "a, b"];
+
+}
