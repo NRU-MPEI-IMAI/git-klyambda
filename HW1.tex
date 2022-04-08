@@ -352,18 +352,61 @@ $$(a + b)^+(aa + bb + abab + baba)(a + b)^+$$
 
 \subsection{}
 $$L = \{(aab)^nb(aba)^m | n \geq 0, m \geq 0\}$$
+Можем построить ДКА $\Rightarrow$ язык явялется регулярным
+
+\begin{center}
+    \includegraphics[scale=0.5]{graph4_1.png}
+\end{center}
 
 \subsection{}
 $$L = \{uaav | u \in \{a,b\}^*, v \in \{a,b\}^*, |u|_b \geq |v|_a\}$$
 
+Фиксируем n $\geq 0\\$
+Рассмотрим слово $ w = b^naaa^n$
+$$w = xyz,y \neq \lambda, |xy| \leq n, \forall k \geq 0 xy^kz \in L$$
+$$ x = b^p, y = b^q, z = b^{n-p-q}aaa^n, p + q \leq n, q > 0$$
+$$w = xy^kz = b^p(b^q)^kb^{n-p-q}aaa^n, u = b^{n+l(k-1)}, v = a^n$$
+При k = 0: $|u|_b = n+l(0-1) = n - l < n = |v|_a, \text{т.е. } xy^kz \notin L$. Следовательно, лемма о накачке не выполняется, значит, язык L не является регулярным.
+
+
 \subsection{}
 $$L = \{a^mw | w \in \{a, b\}^*, 1 \leq |w|_b \leq m  \}$$
+Фиксируем m $\geq 0\\$
+Рассмотрим слово $ w = a^mb^m$
+$$w = xyz,y \neq \lambda, |xy| \leq m, \forall k \geq 0 xy^kz \in L$$
+$$ x = a^p, y = a^q, z = a^{m-p-q}b^m, p + q \leq m, q > 0$$
+$$w = xy^kz = a^p(a^q)^ka^{m-p-q}b^m$$
+При k = 0: $w = a^{m-q}b^m \Rightarrow w \notin L$, так как q > 0. Следовательно, лемма о накачке не выполняется, значит, язык L не является регулярным.
+
+
+
+
+
+
+
 
 \subsection{}
 $$L = \{ a^kb^ma^n | k = n \lor m > 0\}$$
 
+Фиксируем n $\geq 0\\$
+Рассмотрим слово $ w = a^nb^ma^n$
+$$w = xyz,y \neq \lambda, |xy| \leq n, \forall k \geq 0 xy^kz \in L$$
+$$ x = a^p, y = a^q, z = a^{n-p-q}b^ma^n, p + q \leq n, q > 0$$
+$$w = xy^kz = a^p(a^q)^ka^{n-p-q}b^ma^n = a^{n+q(k-1)}b^ma^n$$
+При k = 0: $w = a^{n-q}b^ma^n \Rightarrow n - q \neq n \Rightarrow w \notin L$, так как q > 0. Следовательно, лемма о накачке не выполняется, значит, язык L не является регулярным.
+
 \subsection{}
 $$L = \{ ucv | u \in \{a,b\}^*, v \in \{a,b\}^*, u \neq v^R \}$$
+$$\overline{L} = \{ ucv | u \in \{a,b\}^*, v \in \{a,b\}^*, u = v^R \}$$
+Фиксируем n $\geq 0\\$
+Рассмотрим слово $ w = (ab)^nc(ba)^n = d_1d_2..d_{2n}cd_{2n+2}..d_{4n+1}$
+$$w = xyz,y \neq \lambda, |xy| \leq n, \forall k \geq 0 xy^kz \in \overline{L}$$
+$$ x = d_1..d_p, y = d_{p+1}..d_{p+q}, z = d_{p+q+1}..d_{2n}cd_{2n+2}..d_{4n+1}, p + q \leq n, q > 0$$
+
+
+$$w = xy^kz = d_1..d_p(d_{p+1}..d_{p+q})^kd_{p+q+1}..d_{2n}cd_{2n+2}..d_{4n+1}$$
+При k = 2: $u = d_1..d_p(d_{p+1}..d_{p+q})^2d_{p+q+1}..d_{2n}, v = d_{2n+2}..d_{4n+1}. \\|u| = 2n + q, |v| = 2n, так как q > 0 \Rightarrow |u| \neq |v| \Rightarrow u \neq v^R \Rightarrow w \notin \overline{L}$. Следовательно, лемма о накачке не выполняется для дополнения языка L, значит, язык L не является регулярным.
+
 \newpage
 
 
